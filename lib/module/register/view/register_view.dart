@@ -62,7 +62,7 @@ class RegisterView extends StatefulWidget {
                 hintText: "Name",
                 obscureText: false,
                 onPressed: (value) {
-                  controller.email = value;
+                  controller.name = value;
                 },
               ),
               const SizedBox(
@@ -120,57 +120,15 @@ class RegisterView extends StatefulWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: myGreen,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.doRegEmail();
+                  },
                   child: const Text(
-                    "Login",
+                    "Register",
                     style: TextStyle(
                       color: Colors.white,
                     ),
                   ),
-                ),
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              const Center(
-                child: Text(
-                  "or",
-                  style: TextStyle(
-                    fontSize: 15.0,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: 25.0,
-                      width: 25.0,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage("assets/google.png"),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(
-                            8.0,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      "Login With Google",
-                      style: TextStyle(color: myGrey),
-                    ),
-                  ],
                 ),
               ),
             ],
