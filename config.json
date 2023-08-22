@@ -1,7 +1,11 @@
 {
     "modules": [
         "login",
-        "register"
+        "register",
+        "navbar",
+        "home",
+        "add_product",
+        "profile"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,
