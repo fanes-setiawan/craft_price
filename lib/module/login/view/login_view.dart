@@ -30,22 +30,27 @@ class LoginView extends StatefulWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Login",
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
-                    "Register",
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold,
+                  TextButton(
+                    onPressed: () {
+                      Get.to(RegisterView());
+                    },
+                    child: const Text(
+                      "Register",
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],

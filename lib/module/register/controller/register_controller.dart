@@ -5,6 +5,15 @@ import '../view/register_view.dart';
 class RegisterController extends State<RegisterView> {
   static late RegisterController instance;
   late RegisterView view;
+  bool obscureState = true;
+  bool isLoading = false; // Status loading
+  String? email;
+  String? password;
+
+  visibilitySt() {
+    obscureState = !obscureState;
+    setState(() {});
+  }
 
   @override
   void initState() {
