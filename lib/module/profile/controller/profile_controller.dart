@@ -21,9 +21,9 @@ class ProfileController extends State<ProfileView> {
   doLogout() async {
     try {
       await FirebaseAuth.instance.signOut();
-      Get.offAll(LoginView());
+      Get.offAll(const LoginView());
     } catch (e) {
-      print("error ${e}");
+      print("${e}");
     }
   }
 }
