@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:craft_product/core.dart';
 import '../view/profile_view.dart';
@@ -17,4 +18,12 @@ class ProfileController extends State<ProfileView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+  doLogout() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      Get.offAll(LoginView());
+    } catch (e) {
+      print("error ${e}");
+    }
+  }
 }

@@ -110,7 +110,9 @@ class LoginView extends StatefulWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: myGreen,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.doEmailLogin();
+                  },
                   child: const Text(
                     "Login",
                     style: TextStyle(
@@ -134,7 +136,9 @@ class LoginView extends StatefulWidget {
                 height: 10.0,
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.doGoogleLogin();
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
