@@ -9,6 +9,7 @@ class HomeView extends StatefulWidget {
 
     return Scaffold(
       body: SingleChildScrollView(
+        controller: ScrollController(),
         child: Container(
           child: Column(
             children: [
@@ -93,16 +94,18 @@ class HomeView extends StatefulWidget {
                           "https://beadaily.com/wp-content/uploads/2023/05/Kawat-Tembaga.jpg.webp",
                     },
                     {
-                      "onTap": () {},
-                      "label": "Hitung Hasil",
+                      "onTap": () {
+                        Get.to(const ListProductView());
+                      },
+                      "label": "Harga Produk",
                       "image":
-                          "https://www.talenta.co/wp-content/uploads/2021/03/uang-pesangon-karyawan-1024x683.jpg",
+                          "https://api2.kemenparekraf.go.id/storage/app/uploads/public/627/48d/76a/62748d76ac397255237309.jpg",
                     },
                   ];
-
                   return GridView.builder(
                     padding: EdgeInsets.zero,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       childAspectRatio: 1.0,
                       crossAxisCount: 2,
                       mainAxisSpacing: 8,
@@ -166,230 +169,6 @@ class HomeView extends StatefulWidget {
                   );
                 }),
               ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              Divider(),
-              const SizedBox(
-                height: 15.0,
-              ),
-              Align(
-                alignment: Alignment.bottomLeft,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
-                  child: Text(
-                    "\$ Save Harga",
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      color: myGrey,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 15.0, right: 15.0, bottom: 15.0),
-                child: Column(
-                  children: [
-                    ListView.builder(
-                      itemCount: controller.products.length,
-                      shrinkWrap: true,
-                      physics: ScrollPhysics(),
-                      itemBuilder: (BuildContext context, int index) {
-                        var item = controller.products[index];
-                        return Card(
-                          child: Container(
-                            height: 140,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  height: 140,
-                                  width: 120,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                        item["photo"],
-                                      ),
-                                      fit: BoxFit.cover,
-                                    ),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(
-                                        8.0,
-                                      ),
-                                    ),
-                                  ),
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        right: 3,
-                                        top: 3,
-                                        child: Container(
-                                          height: 30.0,
-                                          width: 30.0,
-                                          decoration: const BoxDecoration(
-                                            image: DecorationImage(
-                                              image: AssetImage(
-                                                  "assets/premium.png"),
-                                              fit: BoxFit.cover,
-                                            ),
-                                            borderRadius: BorderRadius.all(
-                                              Radius.circular(
-                                                8.0,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(15.0),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          item["product_name"],
-                                          style: TextStyle(
-                                            color: myBGreen,
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                      Container(
-                                        width: 170,
-                                        height: 70,
-                                        padding: EdgeInsets.all(10),
-                                        decoration: BoxDecoration(
-                                          color: myBGreen,
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                Text(
-                                                  "Harga",
-                                                  style: TextStyle(
-                                                    fontSize: 14.0,
-                                                    color: myWhite,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                                Text(
-                                                  "Rp ${item["price"]}",
-                                                  style: TextStyle(
-                                                    fontSize: 14.0,
-                                                    color: myWhite,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Container(
-                                              height: 50,
-                                              width: 0.6,
-                                              decoration: BoxDecoration(
-                                                color: myGrey,
-                                              ),
-                                            ),
-                                            Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                Text(
-                                                  "Ukuran",
-                                                  style: TextStyle(
-                                                    fontSize: 14.0,
-                                                    color: myWhite,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                                Text(
-                                                  "besar",
-                                                  style: TextStyle(
-                                                    fontSize: 14.0,
-                                                    color: myWhite,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
-                ),
-              )
-              // Padding(
-              //   padding: const EdgeInsets.all(15.0),
-              //   child: Column(
-              //     children: [
-              //       SizedBox(
-              //         height: 170.0,
-              //         child: Builder(builder: (context) {
-              //           List<Map<String, dynamic>> listButton = [
-              //             {
-              //               "title": "Harga",
-              //               "color": myBGreen,
-              //               "onTap": () {},
-              //             },
-              //             {
-              //               "title": "Bahan",
-              //               "color": myYell,
-              //               "onTap": () {},
-              //             },
-              //             {
-              //               "title": "Bahan",
-              //               "color": myBGreen,
-              //               "onTap": () {},
-              //             }
-              //           ];
-              //           return ListView.builder(
-              //             itemCount: listButton.length,
-              //             scrollDirection: Axis.horizontal,
-              //             padding: EdgeInsets.zero,
-              //             clipBehavior: Clip.none,
-              //             itemBuilder: (context, index) {
-              //               var item = listButton[index];
-              //               return Padding(
-              //                 padding: const EdgeInsets.only(right: 10),
-              //                 child: Container(
-              //                   width:
-              //                       MediaQuery.of(context).size.width / 2 - 50,
-              //                   decoration: BoxDecoration(
-              //                     borderRadius: BorderRadius.circular(10),
-              //                     color: item["color"],
-              //                   ),
-              //                 ),
-              //               );
-              //             },
-              //           );
-              //         }),
-              //       ),
-              //     ],
-              //   ),
-              // )
             ],
           ),
         ),

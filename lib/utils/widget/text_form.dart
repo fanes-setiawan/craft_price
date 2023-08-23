@@ -5,6 +5,7 @@ class FormText extends StatefulWidget {
   final String? helperText;
   final bool obscureText;
   final Widget? suffixIcon;
+  final TextInputType? keyboardType;
 
   final void Function(String) onPressed;
 
@@ -14,6 +15,7 @@ class FormText extends StatefulWidget {
       this.helperText,
       required this.obscureText,
       this.suffixIcon,
+      this.keyboardType,
       required this.onPressed});
 
   @override
@@ -24,6 +26,7 @@ class _FormTextState extends State<FormText> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: widget.keyboardType,
       cursorColor: Colors.black,
       obscureText: widget.obscureText,
       decoration: InputDecoration(

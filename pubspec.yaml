@@ -41,6 +41,9 @@ dependencies:
   persistent_bottom_nav_bar: ^5.0.2
   google_sign_in: ^6.1.4
   intl: ^0.18.1
+  image_picker: ^1.0.2
+  dio: ^5.3.2
+  file_picker: ^5.3.3
 
 dev_dependencies:
   flutter_test:

@@ -8,6 +8,8 @@ export 'package:craft_product/module/add_product/controller/add_product_controll
 export 'package:craft_product/module/add_product/view/add_product_view.dart';
 export 'package:craft_product/module/home/controller/home_controller.dart';
 export 'package:craft_product/module/home/view/home_view.dart';
+export 'package:craft_product/module/list_product/controller/list_product_controller.dart';
+export 'package:craft_product/module/list_product/view/list_product_view.dart';
 export 'package:craft_product/module/login/controller/login_controller.dart';
 export 'package:craft_product/module/login/view/login_view.dart';
 export 'package:craft_product/module/navbar/controller/navbar_controller.dart';
@@ -18,4 +20,5 @@ export 'package:craft_product/module/register/controller/register_controller.dar
 export 'package:craft_product/module/register/view/register_view.dart';
 export 'package:craft_product/state_util.dart';
 export 'package:craft_product/utils/theme/my_colors.dart';
+export 'package:craft_product/utils/widget/q_image_picker.dart';
 export 'package:craft_product/utils/widget/text_form.dart';

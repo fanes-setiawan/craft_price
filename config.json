@@ -5,7 +5,8 @@
         "navbar",
         "home",
         "add_product",
-        "profile"
+        "profile",
+        "list_product"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,
