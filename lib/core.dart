@@ -4,14 +4,20 @@ If there is a conflicting class name in this file,
 it means you have to rename it to something more unique.
 */
 export 'package:craft_product/firebase_options.dart';
+export 'package:craft_product/module/add_notes/controller/add_notes_controller.dart';
+export 'package:craft_product/module/add_notes/view/add_notes_view.dart';
 export 'package:craft_product/module/add_product/controller/add_product_controller.dart';
 export 'package:craft_product/module/add_product/view/add_product_view.dart';
+export 'package:craft_product/module/employee/controller/employee_controller.dart';
+export 'package:craft_product/module/employee/view/employee_view.dart';
 export 'package:craft_product/module/home/controller/home_controller.dart';
 export 'package:craft_product/module/home/view/home_view.dart';
 export 'package:craft_product/module/list_product/controller/list_product_controller.dart';
 export 'package:craft_product/module/list_product/view/list_product_view.dart';
 export 'package:craft_product/module/login/controller/login_controller.dart';
 export 'package:craft_product/module/login/view/login_view.dart';
+export 'package:craft_product/module/material/controller/material_controller.dart';
+export 'package:craft_product/module/material/view/material_view.dart';
 export 'package:craft_product/module/navbar/controller/navbar_controller.dart';
 export 'package:craft_product/module/navbar/view/navbar_view.dart';
 export 'package:craft_product/module/profile/controller/profile_controller.dart';

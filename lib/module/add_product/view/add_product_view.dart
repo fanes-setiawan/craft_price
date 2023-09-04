@@ -56,16 +56,42 @@ class AddProductView extends StatefulWidget {
               const SizedBox(
                 height: 10.0,
               ),
-              Container(
-                margin: const EdgeInsets.only(),
-                child: FormText(
+              TextFormField(
+                cursorColor: Colors.black,
+                cursorWidth: 1,
+                maxLines: null,
+                decoration: InputDecoration(
+                  isDense: true,
+                  filled: true,
                   hintText: "Description",
-                  obscureText: false,
-                  onPressed: (value) {
-                    controller.description = value;
-                  },
+                  fillColor: Colors.grey[200],
+                  hintStyle: TextStyle(
+                    color: Colors.blueGrey,
+                  ),
+                  border: InputBorder.none,
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                      )),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.transparent),
+                  ),
+                  disabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Colors.grey,
+                      )),
                 ),
+                onChanged: (value) {
+                  controller.description = value;
+                },
               ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 100,
+              )
             ],
           ),
         ),

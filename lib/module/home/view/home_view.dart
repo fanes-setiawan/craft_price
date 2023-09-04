@@ -9,7 +9,6 @@ class HomeView extends StatefulWidget {
 
     return Scaffold(
       body: SingleChildScrollView(
-        controller: ScrollController(),
         child: Container(
           child: Column(
             children: [
@@ -17,7 +16,7 @@ class HomeView extends StatefulWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 200,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(20),
                     bottomRight: Radius.circular(20),
                   ),
@@ -27,7 +26,7 @@ class HomeView extends StatefulWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: ListView.builder(
                     shrinkWrap: true,
-                    physics: ScrollPhysics(),
+                    physics: const ScrollPhysics(),
                     itemCount: controller.dayList.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext context, int index) {
@@ -76,19 +75,25 @@ class HomeView extends StatefulWidget {
                 child: Builder(builder: (context) {
                   List categories = [
                     {
-                      "onTap": () {},
+                      "onTap": () {
+                        Get.to(AddNotesView());
+                      },
                       "label": "Catatan",
                       "image":
                           "https://ds393qgzrxwzn.cloudfront.net/resize/c700x700/cat1/img/images/0/0L07HGCpVu.jpg",
                     },
                     {
-                      "onTap": () {},
+                      "onTap": () {
+                        Get.to(const EmployeeView());
+                      },
                       "label": "Kariawan",
                       "image":
                           "https://blog.kini.id/wp-content/uploads/2021/08/KINI.id-7-1568x882.jpg",
                     },
                     {
-                      "onTap": () {},
+                      "onTap": () {
+                        Get.to(const MaterialView());
+                      },
                       "label": "Bahan",
                       "image":
                           "https://beadaily.com/wp-content/uploads/2023/05/Kawat-Tembaga.jpg.webp",

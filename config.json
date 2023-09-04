@@ -6,7 +6,10 @@
         "home",
         "add_product",
         "profile",
-        "list_product"
+        "list_product",
+        "add_notes",
+        "employee",
+        "material"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,
